@@ -43,4 +43,8 @@ Import the agent
 orchestrate agents import -f greeting_agent.yaml
 ```
 
+Import the toolkits
+```
+orchestrate toolkits import --kind mcp --name todo-mcp-demo-1 --description "todo-mcp"  --url "<YOUR_MCP_SERVER_ENDPOINT>/sse"  --transport "sse" --tools "tool1,tool2,tool3"
+```
 
