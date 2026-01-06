@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>watsonx Assistant</title>
+    <!-- Customizing - Defines the containing DOM element where the web chat widget renders -->
+    <style>
+
+
+        /*  Chat Window with Custom Size  */
+        .customElementForWebChatContainer {
+            position: absolute;
+            left: 30%;
+            right: 30%;
+            top: 3%;
+            bottom: 3%;
+        }
+
+        /* Fullscreen Chat Window */
+        /* .customElementForWebChatContainer {
+            position: absolute;
+            left: 0%;
+            right: 0%;
+            top: 0%;
+            bottom: 0%;
+        } */
+    </style>
+
+
+
+</head>
+
+<body>
+<div class="customElementForWebChatContainer"></div>
+
+    <script>
+        const customElement = document.querySelector('.customElementForWebChatContainer');
+
+        window.watsonAssistantChatOptions = {
+            integrationID: "29fcaf9c-0939-4cd5-bc53-ff344abebee1", // The ID of this integration.
+            region: "wxo-us-south", // The region your integration is hosted in.
+            serviceInstanceID: "8e2a4e9a-b8c8-4ef1-b870-dfc497cebb04", // The ID of your service instance.
+            orchestrateUIAgentExtensions: false,
+            element: customElement,
+            openChatByDefault: true,
+            headerConfig: {
+                hideMinimizeButton: true,
+                showRestartButton: true
+            },
+            themeConfig: {
+                corners: 'square',
+            },
+            onLoad: async (instance) => {
+                await instance.render();
+                // Uncomment the line below to restart the conversation when the page loads
+                // instance.restartConversation();
+            }
+        };
+        setTimeout(function () {
+            const t = document.createElement('script');
+            t.src = "https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+            document.head.appendChild(t);
+        });
+    </script>
+</body>
+
+</html>

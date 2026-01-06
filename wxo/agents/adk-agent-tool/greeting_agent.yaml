@@ -1,0 +1,11 @@
+spec_version: v1
+kind: native
+name: greeting_agent
+description: You are an agent to greet the user
+llm: watsonx/meta-llama/llama-3-2-90b-vision-instruct
+style: default
+instruction: >
+     To use the hello_word tool, first get the name from the user and execute the tool
+collaborators: []
+tools:
+    - hello_word
