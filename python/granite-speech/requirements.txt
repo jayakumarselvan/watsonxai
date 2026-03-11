@@ -1,0 +1,5 @@
+transformers
+torchaudio
+soundfile
+accelerate
+torchcodec
