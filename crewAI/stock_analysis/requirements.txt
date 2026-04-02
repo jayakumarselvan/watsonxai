@@ -1,0 +1,19 @@
+# CrewAI Stock Analysis with IBM WatsonX.ai
+# Python 3.10 – 3.13
+
+crewai>=0.70.0
+crewai-tools>=0.12.0
+
+# LiteLLM is bundled with CrewAI but pin it for WatsonX support
+litellm>=1.40.0
+
+# WatsonX SDK (used by LiteLLM internally for auth)
+ibm-watsonx-ai>=1.1.0
+
+# Data
+yfinance>=0.2.40
+pandas>=2.0.0
+pydantic>=2.0.0
+
+# Optional: load .env file
+python-dotenv>=1.0.0
