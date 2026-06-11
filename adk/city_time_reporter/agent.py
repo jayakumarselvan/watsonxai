@@ -36,6 +36,7 @@ city_report_agent = LlmAgent(
 # 3. Define the processing functions
 def lookup_time_function(node_input: GeneratedCity):
     """Simulate returning the current time in the specified city."""
+    # Implement real-time information
     return CityTime(time_info="10:10 AM", city=node_input.city_name)
 
 
